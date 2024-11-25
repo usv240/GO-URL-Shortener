@@ -7,39 +7,28 @@
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
+    <!-- Header Section -->
+    <div class="header">URL Shortener</div>
+
     <div class="container">
         <!-- Form to shorten or delete a URL -->
-        <form id="urlForm" style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+        <form id="urlForm">
             <input 
                 type="text" 
                 name="url" 
                 id="url" 
                 placeholder="Enter URL to shorten or delete" 
-                required 
-                style="flex: 1;"
+                required
             >
             <input 
                 type="text" 
                 name="custom_alias" 
                 id="customAlias" 
-                placeholder="Shortened URL (optional)" 
-                style="flex: 1;"
+                placeholder="Shortened URL (optional)"
             >
-            <button type="submit" style="background-color: #4CAF50;">Shorten URL</button>
+            <button type="submit">Shorten URL</button>
             <button type="button" id="deleteButton" class="delete-button">Delete</button>
         </form>
-
-        <!-- Notification bar for displaying the shortened URL -->
-        <div id="notificationBar" class="notification-bar"></div>
-
-        <!-- Error Modal (Pop-up) -->
-        <div id="errorModal" class="modal">
-            <div class="modal-content">
-                <span id="closeModal" class="close">&times;</span>
-                <p id="errorMessage"></p>
-                <button id="okButton">OK</button>
-            </div>
-        </div>
     </div>
 
     <script src="/static/js/script.js"></script>

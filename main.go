@@ -20,6 +20,10 @@ func main() {
 	http.HandleFunc("/", indexHandler)
 	http.HandleFunc("/shorten", shortenURLHandler)
 
+	// Register routes
+	http.HandleFunc("/delete-url", deleteURLHandler) // Use the handler from handler.go
+	http.HandleFunc("/check-url-or-alias", checkURLOrAliasHandler)
+
 	fmt.Println("Server running on http://localhost:8080")
 	http.ListenAndServe(":8080", nil)
 }

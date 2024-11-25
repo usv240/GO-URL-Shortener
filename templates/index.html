@@ -5,24 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>URL Shortener</title>
     <link rel="stylesheet" href="/static/css/styles.css">
-
 </head>
 <body>
     <div class="container">
-        <h1>URL Shortener</h1>
-        <form id="urlForm">
-            <input type="text" name="url" id="url" placeholder="Enter URL to shorten" required>
-            <input type="text" name="custom_alias" id="customAlias" placeholder="Custom alias (optional)">
-            <button type="submit">Shorten URL</button>
+        <!-- Form to shorten or delete a URL -->
+        <form id="urlForm" style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+            <input 
+                type="text" 
+                name="url" 
+                id="url" 
+                placeholder="Enter URL to shorten or delete" 
+                required 
+                style="flex: 1;"
+            >
+            <input 
+                type="text" 
+                name="custom_alias" 
+                id="customAlias" 
+                placeholder="Shortened URL (optional)" 
+                style="flex: 1;"
+            >
+            <button type="submit" style="background-color: #4CAF50;">Shorten URL</button>
+            <button type="button" id="deleteButton" class="delete-button">Delete</button>
         </form>
-    </div>
-    
-    <!-- Notification bar for displaying the shortened URL -->
-    <div id="notificationBar" class="notification-bar"></div>
-    
-    <script src="/static/js/script.js"></script>
-    
-    
 
+        <!-- Notification bar for displaying the shortened URL -->
+        <div id="notificationBar" class="notification-bar"></div>
+
+        <!-- Error Modal (Pop-up) -->
+        <div id="errorModal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                <p id="errorMessage"></p>
+                <button id="okButton">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
 </body>
 </html>
